@@ -1,16 +1,28 @@
-const { WebSocketServer } = require("ws")
-const dotenv = require("dotenv")
+// Importação da classe WebSocketServer da biblioteca "ws"
+const { WebSocketServer } = require("ws");
 
-dotenv.config()
+// Importação da biblioteca dotenv para carregar variáveis de ambiente
+const dotenv = require("dotenv");
 
-const wss = new WebSocketServer({ port: process.env.PORT || 8080 })
+// Carregamento das variáveis de ambiente do arquivo .env
+dotenv.config();
 
+// Criação de um novo servidor WebSocket na porta especificada pela variável de ambiente PORT ou 8080
+const wss = new WebSocketServer({ 
+  port: process.env.PORT || 8080 
+});
+
+// Definição do evento de conexão do servidor WebSocket
 wss.on("connection", (ws) => {
-    ws.on("error", console.error)
-
-    ws.on("message", (data) => {
-        wss.clients.forEach((client) => client.send(data.toString()))
-    })
-
-    console.log("client connected")
-})
+  // Definição do evento de erro do cliente WebSocket
+  ws.on("error", console.error);
+  
+  // Definição do evento de mensagem recebida do cliente WebSocket
+  ws.on("message", (data) => {
+    // Envio da mensagem recebida para todos os clientes conectados
+    wss.clients.forEach((client) => client.send(data.toString()));
+  });
+  
+  // Registro da conexão de um novo cliente
+  console.log("Cliente conectado");
+});
