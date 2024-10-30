@@ -1,46 +1,91 @@
+<!-- Declaração do documento HTML5 -->
 <!DOCTYPE html>
+
+<!-- Definição da língua do documento (pt-br) -->
 <html lang="pt-br">
+
+<!-- Seção de cabeçalho do documento -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
-    <link rel="stylesheet" href="./css/style.css">
+  <!-- Codificação de caracteres (UTF-8) -->
+  <meta charset="UTF-8">
 
-    <title>Chat Online</title>
+  <!-- Configuração de viewport para dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Importação de fontes do Google Fonts -->
+  <link rel="stylesheet" href="(link unavailable)" />
+
+  <!-- Importação do arquivo CSS personalizado -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Título da página -->
+  <title>Chat Online</title>
+
 </head>
+
+<!-- Seção de corpo do documento -->
 <body>
-    
-    <section class="container">
 
-        <section class="login">
-            <h2>Login</h2>
-            <form class="login__form">
-                <input type="text" class="login__input" placeholder="Seu nome" required />
-                <button type="submit" class="login__button">Entrar</button>
-            </form>
-        </section>
+  <!-- Contêiner principal do chat -->
+  <section class="container">
 
-        <section class="chat">
-            <section class="chat__messages">
-                <!-- <div class="message--self">Hello, World!</div>
+    <!-- Seção de login -->
+    <section class="login">
 
-                <div class="message--other">
-                    <span class="message--sender">Manual do Dev</span>
-                    Olá, Mundo!
-                </div> -->
-            </section>
+      <!-- Título da seção de login -->
+      <h2>Login</h2>
 
-            <form class="chat__form">
-                <input type="text" class="chat__input" placeholder="Digite uma mensagem" required />
-                <button type="submit" class="chat__button">
-                    <span class="material-symbols-outlined">send</span>
-                </button>
-            </form>
-        </section>
+      <!-- Formulário de login -->
+      <form class="login__form">
+
+        <!-- Campo de texto para nome do usuário -->
+        <input type="text" class="login__input" placeholder="Seu nome" required />
+
+        <!-- Botão de envio do formulário -->
+        <button type="submit" class="login__button">Entrar</button>
+
+      </form>
 
     </section>
 
-    <script src="./js/script.js"></script>
+    <!-- Seção de chat -->
+    <section class="chat">
+
+      <!-- Contêiner de mensagens -->
+      <section class="chat__messages">
+
+        <!-- Exemplo de mensagem (comentada) 
+        <div class="message--self">Hello, World!</div> 
+        <div class="message--other"> 
+          <span class="message--sender">Manual do Dev</span> Olá, Mundo! 
+        </div> -->
+
+      </section>
+
+      <!-- Formulário de envio de mensagem -->
+      <form class="chat__form">
+
+        <!-- Campo de texto para digitar mensagem -->
+        <input type="text" class="chat__input" placeholder="Digite uma mensagem" required />
+
+        <!-- Botão de envio da mensagem -->
+        <button type="submit" class="chat__button">
+
+          <!-- Ícone de envio da mensagem -->
+          <span class="material-symbols-outlined">send</span>
+
+        </button>
+
+      </form>
+
+    </section>
+
+  </section>
+
+  <!-- Importação do arquivo JavaScript personalizado -->
+  <script src="./js/script.js"></script>
+
 </body>
+
 </html>
