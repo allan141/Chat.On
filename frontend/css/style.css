@@ -1,7 +1,3 @@
-
-Aqui está o seu código comentado de forma explicativa:
-
-
 // Seleção de elementos HTML
 const login = document.querySelector(".login"); 
 // Seleciona o elemento com classe "login"
