@@ -80,7 +80,7 @@ const scrollScreen = () => {
     behavior: "smooth"
   });
 };
-// Função para rolar tela até o final
+// função para rolar tela até o final
 
 // Função para processar mensagens recebidas pelo WebSocket
 const processMessage = ({ data }) => {
