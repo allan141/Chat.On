@@ -1,8 +1,9 @@
+// login elements
 const login = document.querySelector(".login")
 const loginForm = login.querySelector(".login__form")
 const loginInput = login.querySelector(".login__input")
 
-
+// chat elements
 const chat = document.querySelector(".chat")
 const chatForm = chat.querySelector(".chat__form")
 const chatInput = chat.querySelector(".chat__input")
@@ -82,7 +83,7 @@ const handleLogin = (event) => {
     login.style.display = "none"
     chat.style.display = "flex"
 
-    websocket = new WebSocket("https://chat-on-frontend.onrender.com")
+    websocket = new WebSocket("ws://localhost:8080")
     websocket.onmessage = processMessage
 }
 
@@ -103,60 +104,3 @@ const sendMessage = (event) => {
 
 loginForm.addEventListener("submit", handleLogin)
 chatForm.addEventListener("submit", sendMessage)
-
-// Variáveis para armazenar o nome do usuário e as mensagens
-let usuario;
-let mensagens = [];
-
-// Função para armazenar o nome do usuário no LocalStorage
-function armazenarUsuario(nome) {
-  usuario = nome;
-  localStorage.setItem('usuario', nome);
-}
-
-// Função para armazenar as mensagens no LocalStorage
-function armazenarMensagem(mensagem) {
-  mensagens.push(mensagem);
-  localStorage.setItem('mensagens', JSON.stringify(mensagens));
-}
-
-// Função para recuperar as mensagens do LocalStorage
-function recuperarMensagens() {
-  const mensagensArmazenadas = localStorage.getItem('mensagens');
-  if (mensagensArmazenadas) {
-    mensagens = JSON.parse(mensagensArmazenadas);
-    return mensagens;
-  } else {
-    return [];
-  }
-}
-
-// Função para renderizar as mensagens na tela
-function renderizarMensagens() {
-  const chatMessages = document.querySelector('.chat__messages');
-  chatMessages.innerHTML = '';
-  mensagens.forEach((mensagem) => {
-    const messageElement = document.createElement('div');
-    messageElement.textContent = mensagem;
-    chatMessages.appendChild(messageElement);
-  });
-}
-
-// Evento para o formulário de login
-document.querySelector('.login__form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const nomeUsuario = document.querySelector('.login__input').value;
-  armazenarUsuario(nomeUsuario);
-});
-
-// Evento para o formulário de envio de mensagem
-document.querySelector('.chat__form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const mensagem = document.querySelector('.chat__input').value;
-  armazenarMensagem(mensagem);
-  renderizarMensagens();
-});
-
-// Recuperar mensagens armazenadas e renderizar na tela
-mensagens = recuperarMensagens();
-renderizarMensagens();

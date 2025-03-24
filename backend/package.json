@@ -1,17 +1,17 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js"
   },
   "keywords": [],
-  "author": "allancavalcante141@gmail.com",
+  "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "ws": "^8.18.0"
+    "dotenv": "^16.3.1",
+    "ws": "^8.14.2"
   }
 }
