@@ -7,7 +7,7 @@
     "dev": "node --watch src/server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "allancavalcante141@gmail.com",
   "license": "ISC",
   "description": "",
   "dependencies": {
