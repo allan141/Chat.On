@@ -82,7 +82,7 @@ const handleLogin = (event) => {
     login.style.display = "none"
     chat.style.display = "flex"
 
-    websocket = new WebSocket("macaron-incandescente-773285.netlify.app")
+    websocket = new WebSocket("https://allan141.github.io")
     websocket.onmessage = processMessage
 }
 
