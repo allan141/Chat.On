@@ -83,7 +83,7 @@ const handleLogin = (event) => {
     login.style.display = "none"
     chat.style.display = "flex"
 
-    websocket = new WebSocket("charming-swan-16db10.netlify.app")
+    websocket = new WebSocket("wss://chat-on-e1ka.onrender.com")
     websocket.onmessage = processMessage
 }
 
